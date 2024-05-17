@@ -1,0 +1,100 @@
+.footer {
+    background-color: #222222;
+    color: #fff;
+    padding: 40px 0px 5px 0px ;
+
+  }
+  .div1para
+  {
+    font-size: 16px;
+    margin-top: 25px;
+    font-family: 'Roboto';
+    color: rgb(132, 132, 132);
+  }
+  .div1para1{
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: rgb(132, 132, 132);
+  }
+  .footer h3 {
+    color: #fff;
+  }
+  .form input{
+    background: transparent;
+    color: white;
+    border: 1px solid rgb(132, 132, 132);
+  }
+  .text-area{
+    position: relative;
+  }
+  .clear-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: #b90303;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50%;
+  }
+  .form input:focus{
+    background: transparent;
+    color: white;
+  }
+  .form textarea:focus{
+    background: transparent;
+    color: white;
+  }
+
+  .form input::placeholder{
+    color: rgb(132, 132, 132);
+  }
+  .form textarea::placeholder{
+    color: rgb(132, 132, 132);
+  }
+.form button{
+    font-size: 12px;
+}
+  .form textarea{
+    background: transparent;
+    color: white;
+    border: 1px solid rgb(132, 132, 132);
+  }
+  .social-icons {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icons li:last-child {
+    margin-right: 0;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .social-icons a:hover {
+    color: #ccc;
+  }
+  
+  .form-control {
+    border-radius: 0;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  

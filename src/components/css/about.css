@@ -1,0 +1,21 @@
+.about-container {
+    background-color: #eff5f9; /* Light background color */
+    padding: 50px 0; /* Add padding for better spacing */
+  }
+  
+  .about-content {
+    text-align: center; /* Center align content */
+  }
+  
+  .about-content h2 {
+    font-family: 'Poppins', sans-serif; /* Use Poppins font for headings */
+    font-size: 2.5rem; /* Adjust font size */
+    color: #333; /* Set heading color */
+  }
+  
+  .about-content p {
+    font-family: 'Roboto', sans-serif; /* Use Roboto font for paragraphs */
+    font-size: 1.1rem; /* Adjust font size */
+    color: #555; /* Set paragraph color */
+  }
+  
