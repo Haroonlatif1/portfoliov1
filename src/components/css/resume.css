@@ -1,0 +1,25 @@
+.but-pos{
+    position:relative;
+    top:-130px;
+    left:0px;
+    padding: 12px;
+    transition: trasnform 1ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+.imag1{
+   margin-left: 250px;
+}
+@media (max-width:1200px){
+    .imag1{
+        display: none;
+     }
+     .but-pos{
+        transition: trasnform 1ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    }
+    .but-pos:hover{
+        transform: scale(1.05);
+    
+    }
+}

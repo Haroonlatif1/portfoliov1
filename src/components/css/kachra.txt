@@ -1,0 +1,195 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane,faRobot,faUser } from '@fortawesome/free-solid-svg-icons';
+const ChatbotComponent = () => {
+const [prompt, setPrompt] = useState('');
+const [chatHistory, setChatHistory] = useState([]);
+const [visi, setvisi] = useState(false);
+
+
+
+const sendMessage = async () => {
+if (!prompt.trim()) return; // Prevent sending empty prompts
+setvisi(true)
+
+try {
+const response = await axios.post('http://127.0.0.1:8000/api/chat/', { prompt });
+const newChat = [...chatHistory, { prompt, response: response.data.response }];
+setChatHistory(newChat);
+setPrompt('');
+} catch (error) {
+console.error('Error sending message:', error.message);
+}
+};
+
+return (
+<div className="chatbot-container">
+<h2> Ncbae Chatbot <FontAwesomeIcon icon={faRobot}/></h2>
+{visi && (<><div className="chat-container">
+
+{chatHistory.map((chat, index) => (
+<div key={index} className="chat-item">
+<div className="user-message">
+<strong>You <FontAwesomeIcon icon={faUser}/></strong> {chat.prompt}
+</div>
+<div className="bot-message">
+<strong>Ncbae bot:</strong> {chat.response}
+</div>
+</div>
+))}
+</div>
+</>)}
+
+<div className="input-container">
+<input
+type="text"
+value={prompt}
+onChange={(e) => setPrompt(e.target.value)}
+placeholder="Type your message..."
+onKeyPress={(e) => {
+if (e.key === 'Enter') {
+sendMessage();
+}
+}}
+className="input-field"
+/>
+<button onClick={sendMessage} className="send-button">Send <FontAwesomeIcon icon={faPaperPlane} /></button>
+</div>
+</div>
+);
+};
+
+export default ChatbotComponent;
+
+
+
+.App {
+  height: 100vh;
+  width: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  background-image: url("/public/bg0.jpg");
+  max-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.chatbot-container {
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 40px;
+  margin-top: 100px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.chat-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 100%;
+  height: 60vh;
+}
+
+.chat-item {
+  margin-bottom: 10px;
+}
+
+.user-message, .bot-message {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.user-message {
+  text-align: left;
+  margin: 20px;
+  padding: 14px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #198a00;
+}
+
+.bot-message {
+  text-align: left;
+  margin: 20px;
+  padding: 14px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #c42abc;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input-field {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-right: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.send-button {
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .chatbot-container {
+    padding: 20px;
+  }
+  .chat-container {
+    height: 40vh;
+  }
+  .input-field {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-container {
+    padding: 10px;
+  }
+  .chat-container {
+    height: 30vh;
+  }
+  .input-field {
+    margin-bottom: 10px;
+  }
+}

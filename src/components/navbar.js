@@ -21,7 +21,7 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link ><Link to=".projects" className={pathname === "/projects" ? "active" : ""} >Projects</Link></Nav.Link>
+            <Nav.Link ><Link to="#projects" className={pathname === "/projects" ? "active" : ""} >Projects</Link></Nav.Link>
             <Nav.Link ><Link to="/resume" className={pathname === "/resume" ? "active" : ""}>Resume</Link></Nav.Link>
             <Nav.Link ><Link to="#about" className={pathname === "/about" ? "active" : ""} >Who i am?</Link></Nav.Link>
 

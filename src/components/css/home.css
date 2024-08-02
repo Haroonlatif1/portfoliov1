@@ -20,14 +20,13 @@
     color: rgb(229, 228, 228);
     border: 1px solid rgb(229, 228, 228) ;
 }
-.imag img {
-    max-width: 100%;
-}
+
 .back1{
   background-image: url("/public/exp-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: sticky;
 }
 .start-pic{
   position:relative;
@@ -85,15 +84,10 @@
 
   }
   .imagi {
-    border: 3px solid transparent;
-    border-radius: 50%;
-    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    margin-left: 50px;
 }
 
-.imagi:hover {
-    border-color: rgb(0, 208, 239); /* Change border color on hover */
-    transform: rotate(5deg); /* Rotate slightly on hover */
-}
+
 
 
   .custom-card:hover {
@@ -125,18 +119,9 @@
   width: 200px;
   height: 200px;
   border: none;
-  box-shadow: 0 0 2px 2px #e100c6, 0 0 5px 2px #ff00cc, 0 0 7px 2px #a53881, 0 0 10px 2px #f200d2;
-  animation: glow 2s infinite alternate;
+  box-shadow: 0 0 2px 2px #e100c6, 0 0 3px 2px #ff00cc, 0 0 7px 2px #a53881, 0 0 10px 2px #f200d2;
 }
 
-@keyframes glow {
-  from {
-      border-color: transparent;
-  }
-  to {
-      border-color: transparent;
-  }
-}
 .circle {
   /* position: relative; */
   width: 100px; /* Adjust size as needed */
@@ -246,13 +231,19 @@
   overflow-wrap: break-word; /* Allow long words to break and wrap */
 }
 
+@media (max-width:540px) {
+  .p01{
+   font-size: 13px;
+  }
+}
 
 
 
-
-
-
-
+@media (max-width:996px) {
+  .imagi {
+    margin-left: 0px;
+}
+}
 
 @media (max-width: 540px) {
 
@@ -271,7 +262,6 @@
     .intro {
        margin-left: 0px;
     }
-  
+    
 
 }
-
